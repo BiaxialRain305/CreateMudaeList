@@ -1,3 +1,15 @@
+# Activate the virtual environment
+import os
+
+if os.name == 'nt':  # For Windows
+    activate_this = os.getcwd()+r"\venv\Scripts\activate_this.py"
+
+else:  # For macOS/Linux
+    activate_this = os.getcwd()+r"\venv\bin\activate_this.py"
+print(activate_this)
+with open(activate_this) as file_:
+    exec(file_.read(), dict(__file__=activate_this))
+
 import pyperclip
 
 
@@ -55,7 +67,7 @@ def main():
                 remove_dl = remove_dl.split(' ~ ')[0]
 
             while remove_dl[len(remove_dl) - 1].isnumeric() or remove_dl[len(remove_dl) - 1] == '(' and remove_dl[
-            len(remove_dl) - 2] == ' ':
+                len(remove_dl) - 2] == ' ':
                 remove_dl = remove_dl[:-1]
                 temp = remove_dl
 
