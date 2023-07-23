@@ -1,12 +1,15 @@
 # Activate the virtual environment
 import os
+import sys
+
+script_path = os.path.abspath(sys.argv[0])
+script_path = os.path.dirname(script_path) # removes the file name
 
 if os.name == 'nt':  # For Windows
-    activate_this = os.getcwd()+r"\venv\Scripts\activate_this.py"
+    activate_this = script_path+r"\venv\Scripts\activate_this.py"
 
 else:  # For macOS/Linux
-    activate_this = os.getcwd()+r"\venv\bin\activate_this.py"
-print(activate_this)
+    activate_this = script_path+r"\venv\bin\activate_this.py"
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
