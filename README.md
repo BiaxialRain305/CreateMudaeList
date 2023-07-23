@@ -2,4 +2,4 @@
 
 <h3>Instructions:</h3> 
 	<li>Download the files. Run the .exe file</li>
- 	((Source code file is mkMudaeList_code.py))
+ 	(Source code file is mkMudaeList_code.py)
